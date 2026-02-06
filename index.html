@@ -174,7 +174,7 @@
         <img src="gdl.png" alt="gdl">
         <h3>Geometry Dash Lite</h3>
       </div>
-	  <div class="game" data-name="Friday Night Funkin" data-link="https://aergadfhugghjfhjgfgfhg.vercel.app/a/hvtrs8%2F-flf%2Ckfava3.aoo%2F0006-FLF-831-">
+	  <div class="game" data-name="Friday Night Funkin" data-link="https://aergadfhugghjfhjgfgfhg.vercel.app/a/hvtrs8%2F-flf%2Ckfava3.aoo%2F0006-FLF-831-" data-lock="true">
         <img src="funkin.png" alt="fnf">
         <h3>Friday Night Funkin</h3>
       </div>
@@ -420,6 +420,25 @@ games.forEach(game => {
     frame = newFrame;
 
     frame.src = link;
+
+if (game.dataset.name === "Friday Night Funkin") {
+
+  const originalLink = link;
+
+  frame.onload = () => {
+    try {
+      const current = frame.contentWindow.location.href;
+
+      if (!current.startsWith(originalLink)) {
+        frame.src = originalLink; // force reload
+      }
+
+    } catch {
+      // If cross-origin blocks us, just reload anyway
+      frame.src = originalLink;
+    }
+  };
+}
 
 	  if (game.dataset.name === "A Dance Of Fire And Ice") {
   		frame.style.zoom = "1.5";
