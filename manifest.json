@@ -1,7 +1,7 @@
 {
   "name": "Archix UBG",
   "short_name": "Archix",
-  "start_url": "/index.html",
+  "start_url": "/https:/archix-ubg.github.io/archixubg-site/index.html",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0f0026",
