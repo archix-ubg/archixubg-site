@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Archix-UBG</title>
+  <meta name="theme-color" content="#6a00ff">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" href="ACHXUBG.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -593,6 +595,9 @@
     Made by archix.
   </footer>
 
+<script>
+	navigator.serviceWorker.register("sw.js")
+</script>
   <script>
 const search = document.getElementById('search');
 const games = document.querySelectorAll('.game');
