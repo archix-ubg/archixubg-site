@@ -688,13 +688,16 @@ footer {
 
   <div class="player" id="player">
 	  <div class="player-bar">
-		<span id="playerTitle">Game</span>
-		<div>
-		  <button id="fullscreen">⛶ Fullscreen</button>
-			<button id="newTab">↗ Open Tab</button>
-			<button id="closePlayer">✕ Close</button>
-		</div>
-	  </div>
+  <span id="playerTitle">Game</span>
+  <div>
+    <a id="downloadBtn" target="_blank">
+      <button>⬇ Download</button>
+    </a>
+    <button id="fullscreen">⛶ Fullscreen</button>
+    <button id="newTab">↗ Open Tab</button>
+    <button id="closePlayer">✕ Close</button>
+  </div>
+</div>
 	  <iframe id="playerFrame" scrolling="no"></iframe>
 	</div>
 
@@ -713,27 +716,7 @@ window.addEventListener("beforeunload", function (e) {
 
 });
 </script>
-<script>
-const games = document.querySelectorAll(".game");
-
-games.forEach(game => {
-  const downloadBtn = document.createElement("button");
-  downloadBtn.textContent = "Download";
-  downloadBtn.style.marginTop = "6px";
-  downloadBtn.style.fontSize = "12px";
-  downloadBtn.style.padding = "4px 8px";
-  downloadBtn.style.cursor = "pointer";
-
-  downloadBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent triggering the normal click
-    const url = encodeURIComponent(game.dataset.link);
-    const name = encodeURIComponent(game.dataset-name);
-    window.open(`https://sdif.netlify.app/?url=${url}&name=${name}`, "_blank");
-  });
-
-  game.appendChild(downloadBtn);
-});
-</script>
+	
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -775,6 +758,8 @@ games.forEach(game => {
     }
     currentLink = link;
     title.textContent = game.dataset.name;
+	  document.getElementById("downloadBtn").href =
+`https://sdif.netlify.app/?url=${encodeURIComponent(link)}&name=${encodeURIComponent(game.dataset.name)}`;
 
     // Reset iframe to stop any old scripts or audio
     const newFrame = document.createElement('iframe');
