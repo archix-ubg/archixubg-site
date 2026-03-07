@@ -56,26 +56,32 @@
       gap: 20px;
     }
     .game {
-      background: #2a2a40;
-      border-radius: 16px;
-      padding: 16px;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .game:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    }
-    .game img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-    .game h3 {
-      margin: 0;
-      font-size: 18px;
-      text-align: center;
-    }
+  position: relative;
+  background: #2a2a40;
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.game::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(170,0,255,0.6), rgba(90,0,180,0.4), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.game:hover::after {
+  opacity: 1;
+}
+
+.game:hover {
+  transform: translateY(-4px);
+}
     footer {
       position: fixed;
       bottom: 0;
