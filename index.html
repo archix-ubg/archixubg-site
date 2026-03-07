@@ -713,7 +713,27 @@ window.addEventListener("beforeunload", function (e) {
 
 });
 </script>
+<script>
+const games = document.querySelectorAll(".game");
 
+games.forEach(game => {
+  const downloadBtn = document.createElement("button");
+  downloadBtn.textContent = "Download";
+  downloadBtn.style.marginTop = "6px";
+  downloadBtn.style.fontSize = "12px";
+  downloadBtn.style.padding = "4px 8px";
+  downloadBtn.style.cursor = "pointer";
+
+  downloadBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent triggering the normal click
+    const url = encodeURIComponent(game.dataset.link);
+    const name = encodeURIComponent(game.dataset-name);
+    window.open(`https://sdif.netlify.app/?url=${url}&name=${name}`, "_blank");
+  });
+
+  game.appendChild(downloadBtn);
+});
+</script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
