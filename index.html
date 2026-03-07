@@ -152,44 +152,45 @@ main {
 
 /* PLAYER BAR */
 
+/* PLAYER BAR (THINNER) */
+
 .player-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 6px 12px;   /* smaller padding */
   background: #7b3fe4;
+  min-height: 40px;    /* keeps it compact */
 }
 
 .player-title {
   font-weight: bold;
+  font-size: 14px;     /* smaller title */
 }
 
-/* PLAYER BUTTONS (ALL HORIZONTAL) */
+/* PLAYER BUTTONS */
 
 .player-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
-
-/* PLAYER BUTTON STYLE */
 
 .player-bar button {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: #2a2a40;
   border: 2px solid #4a1fa8;
   color: white;
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 4px 8px;   /* smaller buttons */
+  border-radius: 7px;
   cursor: pointer;
-  font-size: 13px;
-  white-space: nowrap;
-  transition: 0.2s;
+  font-size: 12px;    /* smaller text */
+  line-height: 1;
 }
-
+	  
 .player-bar button:hover {
   border-color: #a57bff;
   box-shadow: 0 0 6px rgba(123,63,228,0.6);
