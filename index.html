@@ -811,48 +811,48 @@ closeBtn.addEventListener('click', () => {
 overlay.addEventListener('click', () => closeBtn.click());
 
 newTab.addEventListener('click', () => {
-  if (currentLink) {
+  if (!currentLink) return;
 
-    let openLink = currentLink;
+  let openLink = currentLink;
 
-    // If it is the iframe page, open the main site instead
-    if (openLink === "https://resonant-moxie-d07aa0.netlify.app/") {
-      openLink = "https://resonant-moxie-d07aa0.netlify.app/";
-    }
+  // If it's that site, open the main site directly
+  if (openLink === "https://resonant-moxie-d07aa0.netlify.app/index.html") {
+    window.open("https://resonant-moxie-d07aa0.netlify.app/", "_blank");
+    return;
+  }
 
-    const newWindow = window.open('about:blank', '_blank');
+  const newWindow = window.open('about:blank', '_blank');
 
-    if (newWindow) {
-      newWindow.document.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <title>${title.textContent}</title>
-          <link rel="icon" href="ACHXUBG.png" type="image/png">
-          <style>
-            html, body {
-              margin:0;
-              padding:0;
-              width:100%;
-              height:100%;
-              background:#111;
-            }
-            iframe {
-              width:100%;
-              height:100%;
-              border:none;
-            }
-          </style>
-        </head>
-        <body>
-          <iframe src="${openLink}" scrolling="no"></iframe>
-        </body>
-        </html>
-      `);
+  if (newWindow) {
+    newWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>${title.textContent}</title>
+        <link rel="icon" href="ACHXUBG.png" type="image/png">
+        <style>
+          html, body {
+            margin:0;
+            padding:0;
+            width:100%;
+            height:100%;
+            background:#111;
+          }
+          iframe {
+            width:100%;
+            height:100%;
+            border:none;
+          }
+        </style>
+      </head>
+      <body>
+        <iframe src="${openLink}" scrolling="no"></iframe>
+      </body>
+      </html>
+    `);
 
-      newWindow.document.close();
-    }
+    newWindow.document.close();
   }
 });
 </script>
