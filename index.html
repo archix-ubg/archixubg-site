@@ -817,8 +817,8 @@ overlay.addEventListener('click', () => closeBtn.click());
 newTab.addEventListener('click', () => {
   if (!currentLink) return;
 
-  // Open Uncanny Cat Golf directly
-  if (game.dataset.name === "Uncanny Cat Golf") {
+  // If the currently selected game is "Uncanny Cat Golf", open directly
+  if (title.textContent === "Uncanny Cat Golf") {
     window.open(currentLink, "_blank");
     return;
   }
@@ -832,15 +832,15 @@ newTab.addEventListener('click', () => {
       <head>
         <title>${title.textContent}</title>
         <style>
-          html,body{
-            margin:0;
-            height:100%;
-            background:#111;
+          html, body {
+            margin: 0;
+            height: 100%;
+            background: #111;
           }
-          iframe{
-            width:100%;
-            height:100%;
-            border:none;
+          iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
           }
         </style>
       </head>
@@ -849,7 +849,6 @@ newTab.addEventListener('click', () => {
       </body>
       </html>
     `);
-
     newWindow.document.close();
   }
 });
