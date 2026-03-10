@@ -819,11 +819,9 @@ overlay.addEventListener('click', () => closeBtn.click());
 newTab.addEventListener('click', () => {
   if (!currentLink) return;
 
-  // If the currently selected game is "Uncanny Cat Golf", open directly
   if (title.textContent === "Uncanny Cat Golf") {
-    urlToOpen = "https://resonant-moxie-d07aa0.netlify.app/index.html";
-	window.open(urlToOpen, "_blank");
-	return;
+    window.open("https://resonant-moxie-d07aa0.netlify.app/index.html", "_blank");
+    return;
   }
 
   const newWindow = window.open("", "_blank");
