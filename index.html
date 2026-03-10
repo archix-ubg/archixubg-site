@@ -107,10 +107,15 @@ main {
 .game::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(123,63,228,0.35);
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(123,63,228,0.4) 0%, transparent 70%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .game:hover::after {
