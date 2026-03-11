@@ -682,7 +682,7 @@
         <img src="moto.png" alt="undertale">
         <h3>Moto X3M</h3>
 	</div>
-		<div class="game" data-name="Uncanny Cat Golf" data-link="https://stirring-axolotl-c593b0.netlify.app/uncannycatgolf/">
+		<div class="game" data-name="Uncanny Cat Golf" data-link="https://rework-site.vercel.app/https:/archix-ubg.github.io/archixubg-site/opentab.html">
         <img src="catgolf.png" alt="undertale">
         <h3>Uncanny Cat Golf</h3>
 	</div>
@@ -701,6 +701,18 @@
 		<div class="game" data-name="A Game Inside A Game" data-link="https://wondrous-cupcake-ef3a04.netlify.app/agiag">
         <img src="agiag.jpg" alt="undertale">
         <h3>A Game Inside A Game</h3>
+	</div>
+		<div class="game" data-name="Project Pitt" data-link="https://rework-site.vercel.app/https:/archix-ubg.github.io/archixubg-site/opentab.html">
+        <img src="projectp.jpg" alt="undertale">
+        <h3>Project Pitt</h3>
+	</div>
+		<div class="game" data-name="Shell Breaker" data-link="https://rework-site.vercel.app/https:/archix-ubg.github.io/archixubg-site/opentab.html">
+        <img src="shellb.png" alt="undertale">
+        <h3>Shell Breaker</h3>
+	</div>
+		<div class="game" data-name="Bad Game" data-link="https://rework-site.vercel.app/https:/archix-ubg.github.io/archixubg-site/opentab.html">
+        <img src="badgame.jpg" alt="undertale">
+        <h3>Bad Game</h3>
 	</div>
   </main>
 
@@ -829,8 +841,16 @@ overlay.addEventListener('click', () => closeBtn.click());
 newTab.addEventListener('click', () => {
   if (!currentLink) return;
 
-  if (title.textContent === "test") {
+  if (title.textContent === "Uncanny Cat Golf") {
     window.open("https://stirring-axolotl-c593b0.netlify.app/uncannycatgolf/", "_blank");
+    return;
+  }
+	if (title.textContent === "Project Pitt") {
+    window.open("https://stirring-axolotl-c593b0.netlify.app/projectpitt/port/", "_blank");
+    return;
+  }
+	if (title.textContent === "shellBreaker") {
+    window.open("https://stirring-axolotl-c593b0.netlify.app/shellbreaker/", "_blank");
     return;
   }
 
