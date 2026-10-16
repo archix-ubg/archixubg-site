@@ -7,7 +7,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="ACHXUBG.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<style>
 	html, body {
 	  margin: 0;
 	  padding: 0;
@@ -23,7 +23,7 @@
 	  grid-template-columns: auto 1fr auto;
 	  align-items: center;
 	  padding: 10px 20px;
-	  background: #7b3fe4;
+	  background: #ff8c00;
 	  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 	}
 
@@ -47,11 +47,11 @@
 	}
 	
 	.search input {
-	  width: 340px;          /* smaller search bar */
+	  width: 340px;
 	  max-width: 60vw;
 	  padding: 10px 14px;
 	  border-radius: 10px;
-	  border: 2px solid #4a1fa8;
+	  border: 2px solid #cc7000;
 	  background: #2a2a40;
 	  color: white;
 	  font-size: 14px;
@@ -59,8 +59,9 @@
 	}
 	
 	.search input:focus {
-	  border-color: #a57bff;
-	  box-shadow: 0 0 10px rgba(123,63,228,0.6);
+	  border-color: #ffb347;
+	  box-shadow: 0 0 10px rgba(255,140,0,0.6);
+	  outline: none;
 	}
 	
 	/* MAIN */
@@ -79,7 +80,7 @@
 	
 	.game {
 	  background: #2a2a40;
-	  border-radius: 4px;       /* less rounded for blocky look */
+	  border-radius: 4px;
 	  padding: 12px;
 	  cursor: pointer;
 	  position: relative;
@@ -88,12 +89,12 @@
 	
 	.game:hover {
 	  transform: translateY(-2px);
-	  box-shadow: 0 6px 16px rgba(123,63,228,0.5); /* glow tint over whole card */
+	  box-shadow: 0 6px 16px rgba(255,140,0,0.5);
 	}
 	
 	.game img {
 	  width: 100%;
-	  border-radius: 2px;       /* slightly blocky */
+	  border-radius: 2px;
 	  margin-bottom: 8px;
 	  transition: transform 0.3s ease;
 	}
@@ -106,7 +107,7 @@
 	  content: "";
 	  position: absolute;
 	  inset: 0;
-	  background: rgba(123,63,228,0.2); /* subtle purple tint overlay */
+	  background: rgba(255,140,0,0.2);
 	  opacity: 0;
 	  transition: opacity 0.3s ease;
 	  border-radius: 4px;
@@ -153,27 +154,25 @@
 	
 	/* PLAYER BAR */
 	
-	/* PLAYER BAR (THINNER) */
-	
 	.player-bar {
 	  display: flex;
 	  align-items: center;
 	  justify-content: space-between;
-	  padding: 6px 12px;   /* smaller padding */
-	  background: #7b3fe4;
-	  min-height: 40px;    /* keeps it compact */
+	  padding: 6px 12px;
+	  background: #ff8c00;
+	  min-height: 40px;
 	}
 	
 	.player-title {
 	  font-weight: bold;
-	  font-size: 14px;     /* smaller title */
+	  font-size: 14px;
 	}
 	
 	/* PLAYER BUTTONS */
 	
 	.player-buttons {
 	  display: flex;
-	  flex-direction: row;   /* forces horizontal */
+	  flex-direction: row;
 	  align-items: center;
 	  gap: 6px;
 	}
@@ -184,8 +183,8 @@
 	  justify-content: center;
 	  gap: 6px;
 	
-	  background: #2a2a40;     /* visible background */
-	  border: 2px solid #4a1fa8;  /* visible border */
+	  background: #2a2a40;
+	  border: 2px solid #cc7000;
 	  color: white;
 	
 	  padding: 5px 10px;
@@ -200,8 +199,8 @@
 	
 	.player-bar button:hover {
 	  background: #333355;
-	  border-color: #a57bff;
-	  box-shadow: 0 0 6px rgba(123,63,228,0.6);
+	  border-color: #ffb347;
+	  box-shadow: 0 0 6px rgba(255,140,0,0.6);
 	}
 	
 	/* IFRAME */
